@@ -1,0 +1,14 @@
+
+.replies-section {
+    margin-top: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+@media (max-width: 400px) {
+    .replies-section {
+        margin-top: 24px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+}

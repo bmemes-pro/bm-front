@@ -1,0 +1,46 @@
+name: main
+
+on:
+  push:
+    branches: [ main ]
+
+env:
+  CLUSTER_NAME: bmprod-k8s
+  IMAGE_NAME: registry.digitalocean.com/bmemes/bm-front
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install doctl
+      uses: digitalocean/action-doctl@v2
+      with:
+        token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+    
+    - name: Build container image
+      run: docker build -t $IMAGE_NAME:$(echo $GITHUB_SHA | head -c7) .
+
+    - name: Log in to DOCR
+      run: doctl registry login --expiry-seconds 1200
+
+    - name: Push image to DigitalOcean Container Registry
+      run: docker push $IMAGE_NAME:$(echo $GITHUB_SHA | head -c7)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Save DO kubeconfig with short-lived credentials
+        run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 $CLUSTER_NAME
+
+      - name: Deploy to DO Kubernetes
+        run: kubectl set image deployment/frontend node-app=$IMAGE_NAME:$(echo $GITHUB_SHA | head -c7)

@@ -1,0 +1,19 @@
+
+.post-comment {
+    margin-top: 16px;
+}
+
+.RepliesSectionFormContainer {
+    margin-top: 16px;
+}
+
+@media (max-width: 400px) {
+    .post-comment {
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .RepliesSectionFormContainer {
+        margin-top: 10px;
+    }
+}

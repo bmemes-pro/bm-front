@@ -1,0 +1,36 @@
+
+.main-layout {
+    display: flex;
+    justify-content: center;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.layout-container {
+    width: 100%;
+    max-width: 500px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.header-container {
+    margin-bottom: 24px;
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 14px;
+}
+
+.post-button {
+    width: 100%;
+}
+
+@media (max-width: 400px) {
+ 
+    .main-layout {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+}

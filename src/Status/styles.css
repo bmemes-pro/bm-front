@@ -1,0 +1,18 @@
+.status-card {
+}
+
+.status-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.online-label {
+    color: forestgreen;
+    padding-top: 2px;
+}
+
+@media (max-width: 400px) {
+    .status-card {
+        border-radius: 6px;
+    }
+}

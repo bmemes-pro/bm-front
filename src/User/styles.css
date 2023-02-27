@@ -1,0 +1,70 @@
+.user-card {
+    
+}
+
+@media (max-width: 400px) {
+    .user-card {
+        border-radius: 6px;
+    }
+}
+
+.user-header {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.user-emoji-avatar {
+    margin-right: 10px;
+    font-size: 22px;
+    display: block;
+    height: 34px;
+    width: 25px;
+    overflow: hidden;
+}
+
+.user-displayname-link {
+    padding-top: 4px;
+    font-size: 16px;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: brown;
+}
+
+a.user-displayname-link:hover {
+    color: red
+}
+
+.user-content {
+    margin-top: 8px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.user-awards {
+    min-width: 80px;
+}
+
+.user-awards-amount {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.user-posts-count {
+    padding-top: 2px;
+    font-size: 12px;
+    min-width: 75px;
+}
+
+.user-created-label {
+    padding-top: 2px;
+    font-size: 12px;
+}
+
+.user-tonscan-link {
+    margin-top: -1px;
+    display: block;
+    flex-grow: 1;
+    text-align: right;
+}

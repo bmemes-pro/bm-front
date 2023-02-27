@@ -1,0 +1,10 @@
+
+.users-page-user {
+    margin-top: 16px;
+}
+
+@media (max-width: 400px) {
+    .users-page-user {
+        margin-top: 10px;
+    }
+}

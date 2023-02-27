@@ -1,0 +1,27 @@
+
+.upload-container {
+    margin-top: 12px;
+}
+
+.upload-component .ant-upload {
+    width: 100%;
+}
+
+.upload-component button {
+    width: 100%;
+}
+
+.alert-component {
+    margin-bottom: 12px;
+}
+
+.post-button {
+    margin-top: 12px;
+}
+
+.ton-info {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 12px;
+}
+

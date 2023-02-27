@@ -1,0 +1,28 @@
+
+.user-page-posts {
+    margin-top: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.user-page-post {
+    margin-top: 16px;
+}
+
+@media (max-width: 400px) {
+
+    .user-page-posts {
+        margin-top: 24px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+
+    .user-page-post {
+        margin-top: 10px;
+    }
+}
+
+.replies-section {
+    margin-top: 24px;
+
+}
